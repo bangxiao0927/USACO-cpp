@@ -1,7 +1,6 @@
 .vscode
 *.dSYM
 .DS_Store
-*/*
 !*.cpp
 !*.in
 !*.out
