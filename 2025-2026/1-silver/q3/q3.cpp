@@ -17,7 +17,7 @@ long long solve_min(long long base, const vector<long long>& delta, int target) 
     for (long long d : delta) {
         if (d < 0) {
             neg_sum += d;
-            ++neg_cnt;
+            neg_cnt++;
             remove_penalty = min(remove_penalty, -d);
         } else if (d == 0) {
             has_zero = true;
@@ -46,7 +46,7 @@ long long solve_max(long long base, const vector<long long>& delta, int target) 
     for (long long d : delta) {
         if (d > 0) {
             pos_sum += d;
-            ++pos_cnt;
+            pos_cnt++;
             remove_penalty = min(remove_penalty, d);
         } else if (d == 0) {
             has_zero = true;
@@ -74,19 +74,19 @@ int main() {
 
         int limit = n - k;
         vector<int> jump(max(limit, 0));
-        for (int i = 0; i < limit; ++i) {
+        for (int i = 0; i < limit; i++) {
             jump[i] = (s[i] - '0') ^ (s[i + 1] - '0');
         }
 
         vector<long long> keep_penalty(k), flip_penalty(k);
-        for (int r = 0; r < k; ++r) {
+        for (int r = 0; r < k; r++) {
             long long keep = 0, flip = 0;
             int state = 0;
             for (int pos = r; pos < n; pos += k) {
                 if (state == 0)
-                    ++flip;
+                    flip++;
                 else
-                    ++keep;
+                    keep++;
                 if (pos >= limit) break;
                 state ^= jump[pos];
             }
@@ -96,7 +96,7 @@ int main() {
 
         long long base = 0;
         vector<long long> delta(k);
-        for (int r = 0; r < k; ++r) {
+        for (int r = 0; r < k; r++) {
             base += keep_penalty[r];
             delta[r] = flip_penalty[r] - keep_penalty[r];
         }

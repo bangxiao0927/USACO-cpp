@@ -140,7 +140,7 @@ long long solve_case(int N, const vector<long long> &L, const vector<long long> 
 int main() {
 
     int T;
-    if (!(cin >> T)) return 0;
+    cin >> T;
     while (T--) {
         int N, M;
         cin >> N >> M;
