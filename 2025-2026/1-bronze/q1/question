@@ -1,0 +1,77 @@
+1,Bessie the cow has in her possession A chips of type A and B chips of type B (0≤A,B≤109
+  
+  ). She can perform the following operation as many times as she likes:
+  
+      If you have at least cB
+  
+  chips of type B, exchange cB chips of type B for cA chips of type A (1≤cA,cB≤109
+  
+      ).
+  
+  Determine the minimum non-negative integer x
+  such that the following holds: after receiving x additional random chips, it is guaranteed that Bessie can end up with at least fA chips
+  of type A (0≤fA≤109
+  
+  ).
+  
+  INPUT FORMAT (input arrives from the terminal / stdin):
+  The first line contains T
+  , the number of independent test cases (1≤T≤104).
+  
+  Then follow T
+  tests, each consisting of five integers A,B,cA,cB,fA
+  
+  .
+  
+  OUTPUT FORMAT (print output to the terminal / stdout):
+  Output the answer for each test on a separate line.
+  
+  Note: The large size of integers involved in this problem may require the use of 64-bit integer data types (e.g., a "long long" in C/C++).
+  
+  SAMPLE INPUT:
+  
+  2
+  2 3 1 1 6
+  2 3 1 1 4
+  
+  SAMPLE OUTPUT:
+  
+  1
+  0
+  
+  SAMPLE INPUT:
+  
+  5
+  0 0 2 3 5
+  0 1 2 3 5
+  1 0 2 3 5
+  10 10 2 3 5
+  0 0 1 1000000000 1000000000
+  
+  SAMPLE OUTPUT:
+  
+  9
+  8
+  7
+  0
+  1000000000000000000
+  
+  For the first test, Bessie initially starts with no chips. If she receives any 9
+  additional chips, she can perform the operation to end up with at least 5 chips of type A. For example, if she receives 2 chips of type A
+  and 7 chips of type B, she can perform the operation twice to end up with 6≥5 chips of type A. However, if she only receive 8 chips of
+  type B, she can only end up with 4<5
+  
+  chips of type A.
+  
+  For the fourth test, she already has enough chips of type A from the start.
+  
+  SCORING:
+  
+      Input 3: cA=cB=1
+  
+  Inputs 4-5: x≤10
+  for all cases
+  Inputs 6-7: cA=2
+  , cB=3
+  
+      Inputs 8-12: No additional constraints.
